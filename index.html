@@ -1,0 +1,1006 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Lumina Estética: projeto demonstrativo de um studio de beleza, com tratamentos e pré-agendamento."
+    >
+
+    <meta name="theme-color" content="#faf6f2">
+
+    <title>Lumina Estética | Sua Beleza, Sua Essência</title>
+
+    <!-- FONTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    
+<!-- ÍCONE DO SITE -->
+<link
+    rel="icon"
+    type="image/svg+xml"
+    href="assets/favicon.svg"
+>
+
+<!-- INFORMAÇÕES PARA COMPARTILHAMENTO -->
+<meta property="og:type" content="website">
+
+<meta
+    property="og:title"
+    content="Lumina Estética | Sua Beleza, Sua Essência"
+>
+
+<meta
+    property="og:description"
+    content="Projeto demonstrativo de um studio de estética com tratamentos, galeria e formulário interativo."
+>
+
+<meta property="og:locale" content="pt_BR">
+
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- ESTILOS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- ACESSIBILIDADE -->
+    <a href="#conteudo" class="skip-link">
+        Pular para o conteúdo principal
+    </a>
+
+
+    <!-- =====================================
+         01 — CABEÇALHO
+    ===================================== -->
+
+    <header class="header">
+
+        <div class="container header-content">
+
+            <a href="#inicio" class="logo">
+                LUMINA <span>ESTÉTICA</span>
+            </a>
+
+            
+<!-- BOTÃO DO MENU MOBILE -->
+<button
+    type="button"
+    class="menu-toggle"
+    aria-label="Abrir menu"
+    aria-expanded="false"
+    aria-controls="main-navigation"
+>
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
+
+
+            
+<nav
+    id="main-navigation"
+    class="navigation"
+    aria-label="Navegação principal"
+>
+
+                <a href="#inicio">Início</a>
+                <a href="#tratamentos">Tratamentos</a>
+                <a href="#galeria">Galeria</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#faq">Dúvidas</a>
+                <a href="#contato">Contato</a>
+            </nav>
+
+            <a href="#contato" class="header-button">
+                Agende sua visita
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <main id="conteudo" tabindex="-1">
+
+        <!-- =====================================
+             02 — HERO
+        ===================================== -->
+
+        <section id="inicio" class="hero">
+
+            <div class="container hero-content">
+
+                <div class="hero-text" data-reveal>
+
+                    <p class="eyebrow">
+                        BELEZA • CUIDADO • BEM-ESTAR
+                    </p>
+
+                    <h1>
+                        Sua beleza,
+                        <span>sua essência.</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Um espaço dedicado a valorizar sua
+                        beleza natural, proporcionando
+                        momentos especiais de cuidado,
+                        tranquilidade e autoestima.
+                    </p>
+
+                    <div class="hero-actions">
+
+                        <a
+                            href="#tratamentos"
+                            class="button button-primary"
+                        >
+                            CONHEÇA NOSSOS TRATAMENTOS
+                        </a>
+
+                        <a href="#sobre" class="button-text">
+                            Nossa essência →
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- FOTOGRAFIA PRINCIPAL -->
+                <div class="hero-visual" data-reveal>
+
+                    <div class="hero-picture">
+
+                        <img
+                            src="assets/hero-lumina.jpg"
+                            alt="Tratamento facial relaxante em ambiente de estética"
+                            class="hero-image"
+                            fetchpriority="high"
+                            decoding="async"
+                        >
+
+                    </div>
+
+                    <div class="hero-badge" aria-hidden="true">
+
+                        <span class="hero-badge-icon">✦</span>
+
+                        <div>
+                            <strong>BELEZA NATURAL</strong>
+                            <small>Cuidado em cada detalhe</small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             03 — TRATAMENTOS
+        ===================================== -->
+
+        <section
+            id="tratamentos"
+            class="section treatments"
+        >
+
+            <div class="container">
+
+                <div class="section-heading" data-reveal>
+
+                    <p class="eyebrow">
+                        CUIDADO EM CADA DETALHE
+                    </p>
+
+                    <h2>Nossos Tratamentos</h2>
+
+                    <p>
+                        Experiências pensadas para
+                        proporcionar cuidado, beleza
+                        e bem-estar.
+                    </p>
+
+                </div>
+
+
+                <!-- FILTROS INTERATIVOS -->
+                <div
+                    class="treatment-filters"
+                    role="group"
+                    aria-label="Filtrar tratamentos"
+                >
+
+                    <button
+                        type="button"
+                        class="filter-button is-active"
+                        data-filter="all"
+                        aria-pressed="true"
+                    >
+                        Todos
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filter-button"
+                        data-filter="facial"
+                        aria-pressed="false"
+                    >
+                        Cuidados Faciais
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filter-button"
+                        data-filter="olhar"
+                        aria-pressed="false"
+                    >
+                        Olhar
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filter-button"
+                        data-filter="bem-estar"
+                        aria-pressed="false"
+                    >
+                        Bem-estar
+                    </button>
+
+                </div>
+
+                <p
+                    id="filter-feedback"
+                    class="filter-feedback"
+                    role="status"
+                    aria-live="polite"
+                >
+                    Exibindo 6 tratamentos.
+                </p>
+
+
+                <!-- CARDS DE TRATAMENTOS -->
+                <div class="treatments-grid">
+
+                    <!-- 01 — FACIAL -->
+                    <article
+                        class="treatment-card"
+                        data-category="facial"
+                        data-reveal
+                    >
+
+                        <div class="treatment-image">
+                            <img
+                                src="assets/limpeza-pele.jpg"
+                                alt="Tratamento de limpeza facial"
+                                loading="lazy"
+                            >
+                        </div>
+
+                        <div class="treatment-icon" aria-hidden="true">
+                            ✧
+                        </div>
+
+                        <h3>Limpeza de Pele</h3>
+
+                        <p>
+                            Cuidado facial personalizado
+                            para uma rotina de beleza
+                            e autocuidado.
+                        </p>
+
+                        <a
+                            href="#contato"
+                            class="treatment-select"
+                            data-service="Limpeza de Pele"
+                        >
+                            Agendar tratamento →
+                        </a>
+
+                    </article>
+
+
+                    <!-- 02 — OLHAR -->
+                    <article
+                        class="treatment-card"
+                        data-category="olhar"
+                        data-reveal
+                    >
+
+                        <div class="treatment-image">
+                            <img
+                                src="assets/sobrancelhas.jpg"
+                                alt="Cuidados com as sobrancelhas"
+                                loading="lazy"
+                            >
+                        </div>
+
+                        <div class="treatment-icon" aria-hidden="true">
+                            ❀
+                        </div>
+
+                        <h3>Design de Sobrancelhas</h3>
+
+                        <p>
+                            Delicadeza e precisão para
+                            valorizar a harmonia natural
+                            do rosto.
+                        </p>
+
+                        <a
+                            href="#contato"
+                            class="treatment-select"
+                            data-service="Design de Sobrancelhas"
+                        >
+                            Agendar tratamento →
+                        </a>
+
+                    </article>
+
+
+                    <!-- 03 — BEM-ESTAR -->
+                    <article
+                        class="treatment-card"
+                        data-category="bem-estar"
+                        data-reveal
+                    >
+
+                        <div class="treatment-image">
+                            <img
+                                src="assets/ritual-facial.jpg"
+                                alt="Massagem facial relaxante"
+                                loading="lazy"
+                            >
+                        </div>
+
+                        <div class="treatment-icon" aria-hidden="true">
+                            ✦
+                        </div>
+
+                        <h3>Ritual Facial</h3>
+
+                        <p>
+                            Um momento de relaxamento
+                            e autocuidado pensado
+                            especialmente para você.
+                        </p>
+
+                        <a
+                            href="#contato"
+                            class="treatment-select"
+                            data-service="Ritual Facial"
+                        >
+                            Agendar tratamento →
+                        </a>
+
+                    </article>
+
+
+                    <!-- 04 — FACIAL -->
+                    <article
+                        class="treatment-card"
+                        data-category="facial"
+                        data-reveal
+                    >
+
+                        <div class="treatment-image">
+                            <img
+                                src="assets/galeria-produtos.jpg"
+                                alt="Produtos cosméticos de cuidados faciais"
+                                loading="lazy"
+                            >
+                        </div>
+
+                        <div class="treatment-icon" aria-hidden="true">
+                            ✿
+                        </div>
+
+                        <h3>Hidratação Facial</h3>
+
+                        <p>
+                            Cuidado dedicado ao conforto
+                            da pele, com uma experiência
+                            delicada e acolhedora.
+                        </p>
+
+                        <a
+                            href="#contato"
+                            class="treatment-select"
+                            data-service="Hidratação Facial"
+                        >
+                            Agendar tratamento →
+                        </a>
+
+                    </article>
+
+
+                    <!-- 05 — OLHAR -->
+                    <article
+                        class="treatment-card"
+                        data-category="olhar"
+                        data-reveal
+                    >
+
+                        <div class="treatment-image">
+                            <img
+                                src="assets/sobrancelhas.jpg"
+                                alt="Imagem ilustrativa de cuidados com a região dos olhos"
+                                loading="lazy"
+                            >
+                        </div>
+
+                        <div class="treatment-icon" aria-hidden="true">
+                            ♡
+                        </div>
+
+                        <h3>Lash Lifting</h3>
+
+                        <p>
+                            Tratamento estético dedicado
+                            à valorização da curvatura
+                            natural dos cílios.
+                        </p>
+
+                        <a
+                            href="#contato"
+                            class="treatment-select"
+                            data-service="Lash Lifting"
+                        >
+                            Agendar tratamento →
+                        </a>
+
+                    </article>
+
+
+                    <!-- 06 — BEM-ESTAR -->
+                    <article
+                        class="treatment-card"
+                        data-category="bem-estar"
+                        data-reveal
+                    >
+
+                        <div class="treatment-image">
+                            <img
+                                src="assets/galeria-spa.jpg"
+                                alt="Ambiente de spa com velas e toalhas"
+                                loading="lazy"
+                            >
+                        </div>
+
+                        <div class="treatment-icon" aria-hidden="true">
+                            ✺
+                        </div>
+
+                        <h3>Massagem Relaxante</h3>
+
+                        <p>
+                            Uma experiência de descanso,
+                            tranquilidade e cuidado
+                            com o bem-estar.
+                        </p>
+
+                        <a
+                            href="#contato"
+                            class="treatment-select"
+                            data-service="Massagem Relaxante"
+                        >
+                            Agendar tratamento →
+                        </a>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             04 — GALERIA
+        ===================================== -->
+
+        <section id="galeria" class="section gallery">
+
+            <div class="container">
+
+                <div class="gallery-heading" data-reveal>
+
+                    <p class="eyebrow">
+                        NOSSO UNIVERSO
+                    </p>
+
+                    <h2>
+                        Pequenos momentos,
+                        <span>grandes sensações.</span>
+                    </h2>
+
+                    <p>
+                        Inspiração, delicadeza e bem-estar
+                        em cada detalhe da experiência Lumina.
+                    </p>
+
+                </div>
+
+                <div class="gallery-grid">
+
+                    <figure class="gallery-item" data-reveal>
+
+                        <img
+                            src="assets/galeria-spa.jpg"
+                            alt="Composição relaxante de spa"
+                            loading="lazy"
+                        >
+
+                        <figcaption>
+                            <span>01 / BEM-ESTAR</span>
+                            <h3>Momentos de paz</h3>
+                        </figcaption>
+
+                    </figure>
+
+
+                    <figure class="gallery-item" data-reveal>
+
+                        <img
+                            src="assets/galeria-produtos.jpg"
+                            alt="Produtos de skincare"
+                            loading="lazy"
+                        >
+
+                        <figcaption>
+                            <span>02 / AUTOCUIDADO</span>
+                            <h3>Beleza nos detalhes</h3>
+                        </figcaption>
+
+                    </figure>
+
+
+                    <figure class="gallery-item" data-reveal>
+
+                        <img
+                            src="assets/ritual-facial.jpg"
+                            alt="Massagem facial relaxante"
+                            loading="lazy"
+                        >
+
+                        <figcaption>
+                            <span>03 / RELAXAMENTO</span>
+                            <h3>Seu momento especial</h3>
+                        </figcaption>
+
+                    </figure>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             05 — SOBRE NÓS
+        ===================================== -->
+
+        <section id="sobre" class="section about">
+
+            <div class="container about-content">
+
+                <div data-reveal>
+
+                    <p class="eyebrow">
+                        NOSSA ESSÊNCIA
+                    </p>
+
+                    <h2>
+                        Beleza que começa
+                        <span>de dentro para fora.</span>
+                    </h2>
+
+                </div>
+
+
+                <div class="about-description" data-reveal>
+
+                    <p>
+                        Na Lumina Estética, acreditamos
+                        que cada pessoa possui uma beleza
+                        única que merece ser valorizada.
+                    </p>
+
+                    <p>
+                        Nossa proposta é proporcionar
+                        uma experiência acolhedora,
+                        combinando cuidado personalizado,
+                        atenção aos detalhes e
+                        momentos de bem-estar.
+                    </p>
+
+                    <a href="#contato" class="button-text">
+                        Conheça nossa proposta →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             06 — PERGUNTAS FREQUENTES
+        ===================================== -->
+
+        <section id="faq" class="section faq">
+
+            <div class="container faq-layout">
+
+                <div class="faq-heading" data-reveal>
+
+                    <p class="eyebrow">
+                        TIRE SUAS DÚVIDAS
+                    </p>
+
+                    <h2>
+                        Perguntas
+                        <span>frequentes.</span>
+                    </h2>
+
+                    <p>
+                        Saiba como funciona a proposta
+                        de atendimento e agendamento
+                        da Lumina Estética.
+                    </p>
+
+                </div>
+
+
+                <div class="faq-list" data-reveal>
+
+                    <details class="faq-item">
+                        <summary>
+                            Como faço para solicitar um horário?
+                        </summary>
+
+                        <div class="faq-answer">
+                            <p>
+                                Escolha o tratamento e preencha
+                                o formulário de contato com
+                                a data desejada.
+                            </p>
+                        </div>
+                    </details>
+
+
+                    <details class="faq-item">
+                        <summary>
+                            O agendamento é confirmado automaticamente?
+                        </summary>
+
+                        <div class="faq-answer">
+                            <p>
+                                Não. O formulário prepara
+                                uma solicitação. Um horário
+                                só poderá ser confirmado
+                                pelo estabelecimento.
+                            </p>
+                        </div>
+                    </details>
+
+
+                    <details class="faq-item">
+                        <summary>
+                            Como escolher o tratamento ideal?
+                        </summary>
+
+                        <div class="faq-answer">
+                            <p>
+                                Consulte a descrição dos
+                                tratamentos e, em uma clínica
+                                real, converse com um
+                                profissional qualificado
+                                para receber orientação.
+                            </p>
+                        </div>
+                    </details>
+
+
+                    <details class="faq-item">
+                        <summary>
+                            Posso solicitar outro horário?
+                        </summary>
+
+                        <div class="faq-answer">
+                            <p>
+                                Sim. Você pode preparar
+                                uma nova solicitação com
+                                outra data e período desejado.
+                            </p>
+                        </div>
+                    </details>
+
+
+                    <details class="faq-item">
+                        <summary>
+                            Este site representa uma clínica real?
+                        </summary>
+
+                        <div class="faq-answer">
+                            <p>
+                                Não. A Lumina Estética é
+                                um projeto fictício de
+                                demonstração desenvolvido
+                                para portfólio profissional.
+                            </p>
+                        </div>
+                    </details>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             07 — CONTATO E AGENDAMENTO
+        ===================================== -->
+
+        <section id="contato" class="section contact">
+
+            <div class="container contact-content">
+
+                <p class="eyebrow">
+                    UM MOMENTO SÓ SEU
+                </p>
+
+                <h2>
+                    Seu cuidado começa aqui.
+                </h2>
+
+                <p class="booking-intro">
+                    Escolha seu tratamento e prepare
+                    uma solicitação de agendamento
+                    personalizada.
+                </p>
+
+
+                <!-- FORMULÁRIO -->
+                <form id="booking-form" class="booking-form">
+
+                    <div class="form-grid">
+
+                        <!-- NOME -->
+                        <div class="form-field">
+
+                            <label for="booking-name">
+                                Seu nome
+                            </label>
+
+                            <input
+                                type="text"
+                                id="booking-name"
+                                name="nome"
+                                placeholder="Digite seu nome"
+                                autocomplete="name"
+                                minlength="2"
+                                maxlength="80"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- SERVIÇO -->
+                        <div class="form-field">
+
+                            <label for="booking-service">
+                                Tratamento desejado
+                            </label>
+
+                            <select
+                                id="booking-service"
+                                name="servico"
+                                required
+                            >
+
+                                <option value="">
+                                    Selecione um tratamento
+                                </option>
+
+                                <option value="Limpeza de Pele">
+                                    Limpeza de Pele
+                                </option>
+
+                                <option value="Design de Sobrancelhas">
+                                    Design de Sobrancelhas
+                                </option>
+
+                                <option value="Ritual Facial">
+                                    Ritual Facial
+                                </option>
+
+                                <option value="Hidratação Facial">
+                                    Hidratação Facial
+                                </option>
+
+                                <option value="Lash Lifting">
+                                    Lash Lifting
+                                </option>
+
+                                <option value="Massagem Relaxante">
+                                    Massagem Relaxante
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- DATA -->
+                        <div class="form-field">
+
+                            <label for="booking-date">
+                                Data desejada
+                            </label>
+
+                            <input
+                                type="date"
+                                id="booking-date"
+                                name="data"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- PERÍODO -->
+                        <div class="form-field">
+
+                            <label for="booking-period">
+                                Período preferido
+                            </label>
+
+                            <select
+                                id="booking-period"
+                                name="periodo"
+                            >
+                                <option value="Sem preferência">
+                                    Sem preferência
+                                </option>
+
+                                <option value="Manhã">
+                                    Manhã
+                                </option>
+
+                                <option value="Tarde">
+                                    Tarde
+                                </option>
+
+                                <option value="Noite">
+                                    Noite
+                                </option>
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ENVIO -->
+                    <button
+                        type="submit"
+                        class="button button-primary booking-submit"
+                    >
+                        PREPARAR AGENDAMENTO
+                        <span aria-hidden="true">→</span>
+                    </button>
+
+                    <p class="form-disclaimer">
+                        Demonstração de portfólio.
+                        Nenhum agendamento é confirmado
+                        automaticamente.
+                    </p>
+
+                </form>
+
+
+                <!-- RESULTADO -->
+                <div
+                    id="booking-result"
+                    class="booking-result"
+                    hidden
+                >
+
+                    <h3>Mensagem preparada!</h3>
+
+                    <p id="booking-status" role="status"></p>
+
+                    <textarea
+                        id="booking-message"
+                        aria-label="Mensagem de agendamento"
+                        rows="6"
+                        readonly
+                    ></textarea>
+
+                    <button
+                        id="copy-booking"
+                        type="button"
+                        class="copy-booking"
+                    >
+                        Copiar mensagem
+                    </button>
+
+                    <p
+                        id="copy-status"
+                        class="copy-status"
+                        role="status"
+                    ></p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================
+         08 — RODAPÉ
+    ===================================== -->
+
+    <footer class="footer">
+
+        <div class="container footer-content">
+
+            <a href="#inicio" class="logo">
+                LUMINA <span>ESTÉTICA</span>
+            </a>
+
+            <p>
+                Beleza, cuidado e bem-estar.
+            </p>
+
+            <p>
+                Projeto fictício desenvolvido
+                para portfólio profissional.
+            </p>
+
+            <p>
+                © <span id="year"></span>
+                Lumina Estética.
+            </p>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>

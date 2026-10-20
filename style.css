@@ -1,0 +1,2684 @@
+
+/* ==========================================
+   LUMINA ESTÉTICA
+   ETAPA 2 — DESIGN PREMIUM
+========================================== */
+
+
+/* ==========================================
+   01 — VARIÁVEIS E IDENTIDADE VISUAL
+========================================== */
+
+:root {
+
+    /* Cores principais */
+    --background: #faf6f2;
+    --background-soft: #f6eae8;
+    --surface: #ffffff;
+
+    /* Cores de destaque */
+    --pink: #f0d6d8;
+    --rose: #c88f95;
+    --rose-dark: #aa727a;
+    --champagne: #9d7770;
+
+    /* Cores dos textos */
+    --dark: #403036;
+    --muted: #786d71;
+
+    /* Bordas e sombras */
+    --border: rgba(200, 143, 149, 0.2);
+
+    --shadow-soft:
+        0 20px 60px rgba(64, 48, 54, 0.06);
+
+    /* Tipografia */
+    --font-title: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', Arial, sans-serif;
+
+}
+
+
+/* ==========================================
+   02 — RESET E CONFIGURAÇÕES GERAIS
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 110px;
+}
+
+body {
+    background: var(--background);
+    color: var(--dark);
+
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.8;
+
+    overflow-x: clip;
+}
+
+::selection {
+    background: var(--pink);
+    color: var(--dark);
+}
+
+.container {
+    width: min(100% - 48px, 1180px);
+    margin-inline: auto;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--rose-dark);
+    outline-offset: 5px;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+section[id] {
+    scroll-margin-top: 110px;
+}
+
+
+/* ==========================================
+   03 — CABEÇALHO PREMIUM
+========================================== */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    background: rgba(250, 246, 242, 0.95);
+
+    border-bottom: 1px solid var(--border);
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+.header-content {
+    min-height: 94px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+/* LOGOTIPO */
+
+.logo {
+    font-family: var(--font-title);
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: 1px;
+
+    white-space: nowrap;
+}
+
+.logo span {
+    display: block;
+
+    color: var(--rose);
+
+    font-family: var(--font-body);
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 4px;
+    line-height: 1.5;
+}
+
+
+/* MENU DE NAVEGAÇÃO */
+
+.navigation {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+}
+
+.navigation a {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+
+    min-height: 44px;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    color: var(--muted);
+
+    transition: color 0.3s ease;
+}
+
+/* Linha decorativa no hover */
+
+.navigation a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+
+    width: 100%;
+    height: 1px;
+
+    background: var(--rose);
+
+    transform: scaleX(0);
+    transform-origin: left;
+
+    transition: transform 0.3s ease;
+}
+
+.navigation a:hover {
+    color: var(--rose-dark);
+}
+
+.navigation a:hover::after {
+    transform: scaleX(1);
+}
+
+
+/* BOTÃO DO CABEÇALHO */
+
+.header-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 46px;
+    padding: 12px 24px;
+
+    background: var(--dark);
+    color: #ffffff;
+
+    border-radius: 50px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.header-button:hover {
+    background: var(--rose-dark);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(200, 143, 149, 0.2);
+}
+
+
+/* ==========================================
+   04 — SEÇÃO HERO
+========================================== */
+
+.hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    min-height: 700px;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        radial-gradient(
+            ellipse at 82% 40%,
+            rgba(240, 214, 216, 0.8),
+            transparent 45%
+        ),
+        linear-gradient(
+            135deg,
+            #faf6f2,
+            #f9efec
+        );
+}
+
+
+/* Decoração abstrata de fundo */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 480px;
+    height: 480px;
+
+    right: -160px;
+    top: -200px;
+
+    border-radius: 50%;
+
+    border: 1px solid
+        rgba(200, 143, 149, 0.16);
+
+    pointer-events: none;
+    z-index: -1;
+}
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    left: -180px;
+    bottom: -140px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(240, 214, 216, 0.25);
+
+    pointer-events: none;
+    z-index: -1;
+}
+
+
+/* CONTEÚDO PRINCIPAL */
+
+.hero-content {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.08fr)
+        minmax(0, 0.92fr);
+
+    align-items: center;
+    gap: 75px;
+
+    padding-block: 100px;
+}
+
+
+/* TEXTO PEQUENO ACIMA DO TÍTULO */
+
+.eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: var(--rose-dark);
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    margin-bottom: 23px;
+}
+
+.eyebrow::before {
+    content: "";
+
+    width: 27px;
+    height: 1px;
+
+    flex-shrink: 0;
+
+    background: var(--rose);
+}
+
+
+/* TÍTULO PRINCIPAL */
+
+.hero h1 {
+    font-family: var(--font-title);
+
+    font-size: clamp(56px, 6vw, 88px);
+    font-weight: 400;
+    line-height: 1.13;
+
+    letter-spacing: -2px;
+
+    max-width: 650px;
+    margin-bottom: 30px;
+}
+
+.hero h1 span {
+    display: block;
+
+    color: var(--rose-dark);
+    font-style: italic;
+}
+
+
+/* DESCRIÇÃO */
+
+.hero-description {
+    color: var(--muted);
+
+    font-size: 15px;
+    line-height: 1.95;
+
+    max-width: 490px;
+    margin-bottom: 35px;
+}
+
+
+/* ==========================================
+   05 — BOTÕES
+========================================== */
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 26px;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 55px;
+    padding: 17px 28px;
+
+    border: 1px solid transparent;
+    border-radius: 50px;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    text-align: center;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.button-primary {
+    color: #ffffff;
+    background: var(--dark);
+}
+
+.button-primary:hover {
+    background: var(--rose-dark);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 28px rgba(200, 143, 149, 0.25);
+}
+
+.button-text {
+    display: inline-flex;
+    align-items: center;
+
+    min-height: 44px;
+
+    color: var(--rose-dark);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.button-text:hover {
+    color: var(--dark);
+    transform: translateX(4px);
+}
+
+
+/* ==========================================
+   06 — ELEMENTO VISUAL DA HERO
+========================================== */
+
+.hero-visual {
+    position: relative;
+
+    min-height: 480px;
+
+    display: grid;
+    place-items: center;
+}
+
+
+/* Círculo decorativo externo */
+
+.hero-visual::before {
+    content: "";
+
+    position: absolute;
+
+    width: min(100%, 440px);
+    aspect-ratio: 1;
+
+    border: 1px solid
+        rgba(200, 143, 149, 0.35);
+
+    border-radius: 50%;
+
+    transform: translate(15px, 15px);
+}
+
+
+/* Decoração circular menor */
+
+.hero-visual::after {
+    content: "✦";
+
+    position: absolute;
+    right: 1%;
+    top: 10%;
+
+    display: grid;
+    place-items: center;
+
+    width: 75px;
+    height: 75px;
+
+    color: var(--rose-dark);
+    background: #fffaf7;
+
+    border: 1px solid var(--border);
+    border-radius: 50%;
+
+    font-size: 28px;
+
+    box-shadow: var(--shadow-soft);
+}
+
+
+/* CÍRCULO PRINCIPAL */
+
+.visual-decoration {
+    position: relative;
+    overflow: hidden;
+
+    width: min(100%, 410px);
+    aspect-ratio: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 30% 25%,
+            #ffffff 0%,
+            #f7e6e6 50%,
+            #e9c5c9 100%
+        );
+
+    border: 10px solid
+        rgba(255, 255, 255, 0.85);
+
+    box-shadow:
+        0 25px 85px rgba(170, 114, 122, 0.17),
+        inset 0 0 35px rgba(255, 255, 255, 0.55);
+}
+
+
+/* Anel interno */
+
+.visual-decoration::before {
+    content: "";
+
+    position: absolute;
+    inset: 18px;
+
+    border: 1px solid
+        rgba(170, 114, 122, 0.35);
+
+    border-radius: 50%;
+}
+
+
+/* SÍMBOLO CENTRAL */
+
+.visual-symbol {
+    color: var(--rose-dark);
+
+    font-family: var(--font-title);
+    font-size: 85px;
+    line-height: 1;
+
+    margin-bottom: 14px;
+}
+
+.visual-decoration p {
+    font-family: var(--font-title);
+
+    font-size: 39px;
+    font-weight: 500;
+    letter-spacing: 5px;
+}
+
+.visual-decoration small {
+    color: var(--rose-dark);
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+
+    margin-top: 6px;
+}
+
+
+/* ==========================================
+   07 — CONFIGURAÇÕES DAS SEÇÕES
+========================================== */
+
+.section {
+    position: relative;
+    padding-block: 115px;
+}
+
+.section h2 {
+    font-family: var(--font-title);
+
+    font-size: clamp(40px, 4.6vw, 64px);
+    font-weight: 400;
+    line-height: 1.2;
+
+    letter-spacing: -1px;
+}
+
+.section-heading {
+    max-width: 700px;
+    margin-bottom: 55px;
+}
+
+.section-heading h2 {
+    margin-bottom: 22px;
+}
+
+.section-heading p:not(.eyebrow) {
+    color: var(--muted);
+
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+
+/* ==========================================
+   08 — TRATAMENTOS PREMIUM
+========================================== */
+
+.treatments {
+    background: var(--surface);
+}
+
+.treatments-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 24px;
+
+    counter-reset: treatment;
+}
+
+
+/* CARTÕES */
+
+.treatment-card {
+    position: relative;
+    overflow: hidden;
+
+    min-height: 350px;
+    padding: 42px 35px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    background: #fcf8f6;
+
+    border: 1px solid var(--border);
+    border-radius: 22px;
+
+    counter-increment: treatment;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+
+/* Numeração decorativa */
+
+.treatment-card::after {
+    content: "0" counter(treatment);
+
+    position: absolute;
+    right: 28px;
+    top: 25px;
+
+    color: rgba(200, 143, 149, 0.22);
+
+    font-family: var(--font-title);
+    font-size: 46px;
+}
+
+.treatment-card:hover {
+    transform: translateY(-9px);
+
+    border-color: rgba(200, 143, 149, 0.5);
+
+    box-shadow:
+        0 25px 60px rgba(64, 48, 54, 0.09);
+}
+
+
+/* ÍCONES */
+
+.treatment-icon {
+    position: relative;
+    z-index: 1;
+
+    display: grid;
+    place-items: center;
+
+    width: 72px;
+    height: 72px;
+
+    margin-bottom: 32px;
+
+    color: var(--rose-dark);
+    background: #f7e6e7;
+
+    border-radius: 50%;
+
+    font-family: var(--font-title);
+    font-size: 32px;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+.treatment-card:hover .treatment-icon {
+    background: var(--pink);
+    transform: rotate(12deg);
+}
+
+
+/* TÍTULOS DOS TRATAMENTOS */
+
+.treatment-card h3 {
+    font-family: var(--font-title);
+
+    font-size: 29px;
+    font-weight: 500;
+    line-height: 1.3;
+
+    margin-bottom: 17px;
+}
+
+
+/* DESCRIÇÕES */
+
+.treatment-card p {
+    color: var(--muted);
+
+    font-size: 14px;
+    line-height: 1.85;
+
+    margin-bottom: 28px;
+}
+
+
+/* LINKS */
+
+.treatment-card a {
+    display: inline-flex;
+    align-items: center;
+
+    min-height: 44px;
+    margin-top: auto;
+
+    color: var(--rose-dark);
+
+    font-size: 12px;
+    font-weight: 700;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.treatment-card a:hover {
+    color: var(--dark);
+    transform: translateX(5px);
+}
+
+
+/* ==========================================
+   09 — SEÇÃO SOBRE NÓS
+========================================== */
+
+.about {
+    background:
+        linear-gradient(
+            135deg,
+            #faf6f2,
+            #f7eae8
+        );
+
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.about-content {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+    align-items: center;
+    gap: 85px;
+}
+
+.about h2 {
+    max-width: 580px;
+}
+
+.about h2 span {
+    display: block;
+
+    color: var(--rose-dark);
+    font-style: italic;
+}
+
+
+/* CONTEÚDO TEXTUAL */
+
+.about-description {
+    padding-left: 34px;
+    border-left: 2px solid var(--rose);
+}
+
+.about-description p {
+    color: var(--muted);
+
+    font-size: 15px;
+    line-height: 2;
+
+    margin-bottom: 25px;
+}
+
+.about-description .button-text {
+    margin-top: 5px;
+}
+
+
+/* ==========================================
+   10 — SEÇÃO DE CONTATO
+========================================== */
+
+.contact {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f5dddd,
+            #f7e9e4,
+            #f3d6d8
+        );
+}
+
+
+/* Decoração superior */
+
+.contact::before {
+    content: "";
+
+    position: absolute;
+
+    width: 390px;
+    height: 390px;
+
+    left: -180px;
+    top: -200px;
+
+    border: 1px solid
+        rgba(157, 119, 112, 0.25);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+    z-index: -1;
+}
+
+
+/* Decoração inferior */
+
+.contact::after {
+    content: "";
+
+    position: absolute;
+
+    width: 390px;
+    height: 390px;
+
+    right: -170px;
+    bottom: -220px;
+
+    border: 1px solid
+        rgba(157, 119, 112, 0.25);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+    z-index: -1;
+}
+
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    max-width: 850px;
+}
+
+.contact .eyebrow {
+    justify-content: center;
+}
+
+.contact h2 {
+    max-width: 750px;
+    margin-bottom: 28px;
+}
+
+.contact-content > p:not(.eyebrow) {
+    color: #66565b;
+
+    max-width: 550px;
+
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.contact-content .demo-notice {
+    margin-top: 28px;
+
+    font-size: 12px;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+
+/* ==========================================
+   11 — RODAPÉ
+========================================== */
+
+.footer {
+    padding-block: 55px;
+
+    color: #ffffff;
+    background: var(--dark);
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 16px;
+
+    text-align: center;
+}
+
+.footer .logo {
+    color: #ffffff;
+    margin-bottom: 6px;
+}
+
+.footer .logo span {
+    color: #e5b3b7;
+}
+
+.footer-content p {
+    color: #e0d2d6;
+
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+
+/* ==========================================
+   12 — RESPONSIVIDADE: TABLETS
+========================================== */
+
+@media (max-width: 1000px) {
+
+    .header-content {
+        gap: 16px;
+    }
+
+    .navigation {
+        gap: 17px;
+    }
+
+    .hero-content {
+        gap: 35px;
+    }
+
+    .hero-visual {
+        min-height: 410px;
+    }
+
+    .visual-decoration {
+        width: min(100%, 350px);
+    }
+
+    .treatment-card {
+        padding: 35px 26px;
+    }
+
+    .treatment-card h3 {
+        font-size: 26px;
+    }
+
+    .about-content {
+        gap: 45px;
+    }
+
+}
+
+
+/* ==========================================
+   13 — RESPONSIVIDADE: TABLETS PEQUENOS
+========================================== */
+
+@media (max-width: 800px) {
+
+    .header-content {
+        flex-wrap: wrap;
+        justify-content: center;
+
+        padding-block: 18px;
+    }
+
+    .navigation {
+        order: 3;
+
+        width: 100%;
+
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px 25px;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+
+        padding-block: 85px;
+    }
+
+    .hero h1 {
+        margin-inline: auto;
+    }
+
+    .hero .eyebrow,
+    .hero-actions {
+        justify-content: center;
+    }
+
+    .hero-description {
+        margin-inline: auto;
+    }
+
+    .hero-visual {
+        min-height: 420px;
+    }
+
+    .treatments-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .about-description {
+        padding-left: 25px;
+    }
+
+    .section {
+        padding-block: 90px;
+    }
+
+}
+
+
+/* ==========================================
+   14 — RESPONSIVIDADE: CELULARES
+========================================== */
+
+@media (max-width: 600px) {
+
+    .container {
+        width: min(100% - 36px, 1180px);
+    }
+
+    .header-content {
+        gap: 13px;
+    }
+
+    .logo {
+        font-size: 23px;
+    }
+
+    .navigation {
+        gap: 2px 18px;
+    }
+
+    .navigation a {
+        font-size: 12px;
+    }
+
+    .header-button {
+        padding: 10px 18px;
+        min-height: 42px;
+    }
+
+    .hero {
+        min-height: auto;
+    }
+
+    .hero-content {
+        padding-block: 70px;
+        gap: 40px;
+    }
+
+    .hero h1 {
+        font-size: clamp(43px, 10vw, 65px);
+        letter-spacing: -1px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .hero-actions .button {
+        width: 100%;
+        max-width: 345px;
+    }
+
+    .hero-visual {
+        min-height: 330px;
+    }
+
+    .hero-visual::before {
+        width: min(80vw, 335px);
+    }
+
+    .hero-visual::after {
+        width: 52px;
+        height: 52px;
+
+        font-size: 20px;
+    }
+
+    .visual-decoration {
+        width: min(76vw, 315px);
+    }
+
+    .visual-symbol {
+        font-size: 65px;
+    }
+
+    .visual-decoration p {
+        font-size: 29px;
+    }
+
+    .section {
+        padding-block: 75px;
+    }
+
+    .section h2 {
+        font-size: clamp(36px, 9vw, 52px);
+    }
+
+    .section-heading {
+        margin-bottom: 38px;
+    }
+
+    .treatments-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .treatment-card {
+        min-height: 300px;
+        padding: 32px;
+    }
+
+    .about-description {
+        padding-left: 20px;
+    }
+
+    .contact h2 {
+        font-size: clamp(35px, 9vw, 50px);
+    }
+
+}
+
+
+/* ==========================================
+   15 — CELULARES MUITO PEQUENOS
+========================================== */
+
+@media (max-width: 380px) {
+
+    .container {
+        width: calc(100% - 28px);
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .eyebrow {
+        font-size: 10px;
+        letter-spacing: 1.8px;
+    }
+
+    .visual-decoration {
+        width: min(72vw, 265px);
+    }
+
+    .visual-decoration p {
+        font-size: 25px;
+    }
+
+    .treatment-card {
+        padding: 28px 24px;
+    }
+
+}
+
+
+/* ==========================================
+   16 — ACESSIBILIDADE
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+
+}
+
+
+/* ==========================================
+   LUMINA ESTÉTICA
+   ETAPA 3 — FOTOGRAFIAS E ANIMAÇÕES
+========================================== */
+
+
+/* ==========================================
+   01 — NOVA FOTOGRAFIA PRINCIPAL
+========================================== */
+
+.hero-visual {
+    position: relative;
+    isolation: isolate;
+    min-height: 540px;
+}
+
+/* Remove os círculos da versão anterior */
+
+.hero-visual::before,
+.hero-visual::after {
+    content: none;
+}
+
+
+/* Moldura fotográfica */
+
+.hero-picture {
+    position: relative;
+    overflow: hidden;
+
+    width: min(100%, 420px);
+    aspect-ratio: 4 / 5;
+
+    background: var(--pink);
+
+    border: 9px solid #ffffff;
+    border-radius: 220px 220px 24px 24px;
+
+    box-shadow:
+        0 28px 80px rgba(170, 114, 122, 0.22);
+}
+
+
+/* Fotografia */
+
+.hero-image {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.8s ease;
+}
+
+.hero-picture:hover .hero-image {
+    transform: scale(1.06);
+}
+
+
+/* ==========================================
+   02 — SELO DA HERO
+========================================== */
+
+.hero-badge {
+    position: absolute;
+    right: -8px;
+    bottom: 36px;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 19px 24px;
+
+    color: var(--dark);
+    background: #ffffff;
+
+    border: 1px solid var(--border);
+    border-radius: 14px;
+
+    box-shadow:
+        0 15px 45px rgba(64, 48, 54, 0.13);
+}
+
+.hero-badge-icon {
+    display: grid;
+    place-items: center;
+
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    color: var(--rose-dark);
+    background: var(--pink);
+
+    border-radius: 50%;
+    font-size: 24px;
+}
+
+.hero-badge strong {
+    display: block;
+
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.hero-badge small {
+    display: block;
+
+    color: var(--muted);
+    font-size: 10px;
+
+    margin-top: 3px;
+}
+
+
+/* ==========================================
+   03 — CARTÕES COM FOTOGRAFIAS
+========================================== */
+
+.treatment-card {
+    padding: 16px 16px 30px;
+    min-height: 0;
+}
+
+
+/* Contêiner da imagem */
+
+.treatment-image {
+    position: relative;
+    overflow: hidden;
+
+    width: 100%;
+    height: 210px;
+
+    background: var(--pink);
+
+    border-radius: 15px;
+    margin-bottom: 0;
+}
+
+.treatment-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.65s ease;
+}
+
+.treatment-card:hover .treatment-image img {
+    transform: scale(1.08);
+}
+
+
+/* Ícone sobreposto à fotografia */
+
+.treatment-icon {
+    position: relative;
+    z-index: 2;
+
+    margin-top: -32px;
+    margin-left: 16px;
+    margin-bottom: 20px;
+
+    width: 65px;
+    height: 65px;
+
+    border: 5px solid #fcf8f6;
+}
+
+
+/* Numeração dos cartões */
+
+.treatment-card::after {
+    top: 233px;
+    right: 30px;
+
+    font-size: 38px;
+    pointer-events: none;
+}
+
+
+/* Alinhamento interno do conteúdo */
+
+.treatment-card h3,
+.treatment-card p,
+.treatment-card a {
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+.treatment-card h3 {
+    margin-bottom: 14px;
+}
+
+.treatment-card p {
+    margin-bottom: 23px;
+}
+
+.treatment-card a {
+    margin-top: auto;
+}
+
+
+/* ==========================================
+   04 — NOVA SEÇÃO GALERIA
+========================================== */
+
+.gallery {
+    background:
+        linear-gradient(
+            180deg,
+            #faf6f2,
+            #fffaf7
+        );
+
+    border-top: 1px solid var(--border);
+}
+
+
+/* Cabeçalho */
+
+.gallery-heading {
+    max-width: 750px;
+    margin-bottom: 52px;
+}
+
+.gallery-heading h2 {
+    margin-bottom: 23px;
+}
+
+.gallery-heading h2 span {
+    display: block;
+
+    color: var(--rose-dark);
+    font-style: italic;
+}
+
+.gallery-heading > p:last-child {
+    color: var(--muted);
+
+    max-width: 560px;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+
+/* ==========================================
+   05 — GRID DA GALERIA
+========================================== */
+
+.gallery-grid {
+    display: grid;
+
+    grid-template-columns:
+        1.1fr 0.9fr 0.9fr;
+
+    gap: 20px;
+}
+
+
+/* Cartões fotográficos */
+
+.gallery-item {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    margin: 0;
+    aspect-ratio: 3 / 4;
+
+    background: var(--pink);
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 15px 35px rgba(64, 48, 54, 0.05);
+}
+
+
+/* Imagens */
+
+.gallery-item img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.7s ease,
+        filter 0.7s ease;
+}
+
+
+/* Degradê para melhorar a leitura */
+
+.gallery-item::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    background: linear-gradient(
+        to top,
+        rgba(39, 26, 31, 0.78),
+        rgba(39, 26, 31, 0.12) 48%,
+        transparent 75%
+    );
+
+    pointer-events: none;
+}
+
+
+/* Legendas */
+
+.gallery-item figcaption {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+
+    padding: 30px;
+}
+
+.gallery-item figcaption span {
+    display: block;
+
+    color: #f3d2d7;
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    margin-bottom: 9px;
+}
+
+.gallery-item h3 {
+    color: #ffffff;
+
+    font-family: var(--font-title);
+
+    font-size: clamp(24px, 2.8vw, 35px);
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+
+/* Efeito de aproximação */
+
+.gallery-item:hover img {
+    transform: scale(1.07);
+    filter: saturate(1.08);
+}
+
+
+/* ==========================================
+   06 — ANIMAÇÕES DE ENTRADA
+========================================== */
+
+/*
+   As classes reveal-ready e is-visible
+   serão controladas pelo JavaScript.
+*/
+
+.reveal-ready {
+    opacity: 0;
+    transform: translateY(28px);
+
+    transition:
+        opacity 0.75s ease var(--reveal-delay, 0s),
+        transform 0.75s ease var(--reveal-delay, 0s);
+}
+
+.reveal-ready.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Entrada escalonada dos cartões */
+
+.treatment-card:nth-child(2),
+.gallery-item:nth-child(2) {
+    --reveal-delay: 0.12s;
+}
+
+.treatment-card:nth-child(3),
+.gallery-item:nth-child(3) {
+    --reveal-delay: 0.24s;
+}
+
+
+/* Preserva o hover após a entrada */
+
+.treatment-card.reveal-ready.is-visible:hover {
+    transform: translateY(-9px);
+}
+
+
+/* ==========================================
+   07 — TABLETS
+========================================== */
+
+@media (max-width: 1000px) {
+
+    .hero-visual {
+        min-height: 460px;
+    }
+
+    .hero-picture {
+        width: min(100%, 355px);
+    }
+
+    .hero-badge {
+        right: 0;
+        bottom: 12px;
+    }
+
+    .treatment-image {
+        height: 180px;
+    }
+
+    .treatment-card::after {
+        top: 204px;
+    }
+
+}
+
+
+/* ==========================================
+   08 — TABLETS PEQUENOS
+========================================== */
+
+@media (max-width: 800px) {
+
+    .hero-visual {
+        min-height: 510px;
+    }
+
+    .hero-picture {
+        width: min(78vw, 400px);
+    }
+
+    .hero-badge {
+        right: max(0px, calc(50% - 255px));
+        bottom: 5px;
+    }
+
+    .gallery-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .gallery-item:first-child {
+        grid-column: span 2;
+        aspect-ratio: 16 / 9;
+    }
+
+}
+
+
+/* ==========================================
+   09 — CELULARES
+========================================== */
+
+@media (max-width: 600px) {
+
+    .hero-visual {
+        min-height: 405px;
+    }
+
+    .hero-picture {
+        width: min(76vw, 315px);
+        border-width: 6px;
+    }
+
+    .hero-badge {
+        right: 0;
+        bottom: 0;
+
+        padding: 13px 15px;
+        gap: 10px;
+    }
+
+    .hero-badge-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 18px;
+    }
+
+    .hero-badge strong {
+        font-size: 9px;
+    }
+
+    .hero-badge small {
+        font-size: 9px;
+    }
+
+    .treatment-image {
+        height: 230px;
+    }
+
+    .treatment-card::after {
+        top: 254px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item,
+    .gallery-item:first-child {
+        grid-column: auto;
+        aspect-ratio: 4 / 3;
+    }
+
+    .gallery-item figcaption {
+        padding: 24px;
+    }
+
+    .gallery-heading {
+        margin-bottom: 35px;
+    }
+
+    .gallery-heading > p:last-child {
+        font-size: 14px;
+    }
+
+}
+
+
+/* ==========================================
+   10 — ACESSIBILIDADE
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .reveal-ready {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .hero-image,
+    .treatment-image img,
+    .gallery-item img {
+        transition: none;
+    }
+
+}
+
+
+/* ==========================================
+   LUMINA ESTÉTICA
+   ETAPA 4 — FUNCIONALIDADES AVANÇADAS
+========================================== */
+
+
+/* ==========================================
+   01 — ACESSIBILIDADE
+========================================== */
+
+.skip-link {
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    z-index: 9999;
+
+    padding: 12px 18px;
+
+    color: #ffffff;
+    background: var(--dark);
+
+    border-radius: 8px;
+
+    transform: translateY(-160%);
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+}
+
+
+/* ==========================================
+   02 — FILTROS DE TRATAMENTOS
+========================================== */
+
+.treatment-filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 14px;
+}
+
+.filter-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 45px;
+    padding: 12px 24px;
+
+    border: 1px solid var(--border);
+    border-radius: 50px;
+
+    color: var(--muted);
+    background: #ffffff;
+
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.filter-button:hover {
+    color: var(--rose-dark);
+    border-color: var(--rose);
+    transform: translateY(-2px);
+}
+
+/* Categoria selecionada */
+
+.filter-button.is-active {
+    color: #ffffff;
+    background: var(--rose-dark);
+    border-color: var(--rose-dark);
+}
+
+.filter-button.is-active:hover {
+    background: var(--dark);
+    color: #ffffff;
+}
+
+
+/* Contador de resultados */
+
+.filter-feedback {
+    color: var(--muted);
+
+    font-size: 12px;
+    margin-bottom: 30px;
+}
+
+
+/* Esconde cartões filtrados */
+/* A especificidade supera o display:flex anterior */
+
+.treatment-card[hidden] {
+    display: none;
+}
+
+
+/* ==========================================
+   03 — MELHORIAS NOS CARTÕES
+========================================== */
+
+.treatment-card {
+    height: 100%;
+}
+
+.treatment-card h3 {
+    overflow-wrap: break-word;
+}
+
+.treatment-card .treatment-select {
+    padding-top: 8px;
+    padding-bottom: 8px;
+
+    color: var(--rose-dark);
+    font-weight: 700;
+}
+
+.treatment-card .treatment-select:hover {
+    color: var(--dark);
+}
+
+
+/* ==========================================
+   04 — SEÇÃO FAQ
+========================================== */
+
+.faq {
+    background: #ffffff;
+
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.faq-layout {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 0.85fr)
+        minmax(0, 1.15fr);
+
+    align-items: start;
+    gap: 75px;
+}
+
+
+/* Título e descrição */
+
+.faq-heading h2 {
+    margin-bottom: 24px;
+}
+
+.faq-heading h2 span {
+    display: block;
+
+    color: var(--rose-dark);
+    font-style: italic;
+}
+
+.faq-heading > p:last-child {
+    max-width: 390px;
+
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+
+/* Lista de perguntas */
+
+.faq-list {
+    border-top: 1px solid var(--border);
+}
+
+.faq-item {
+    padding: 0;
+
+    border-bottom: 1px solid var(--border);
+}
+
+
+/* Pergunta clicável */
+
+.faq-item summary {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    min-height: 80px;
+    padding: 24px 12px 24px 0;
+
+    color: var(--dark);
+
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.6;
+
+    list-style: none;
+    cursor: pointer;
+
+    transition: color 0.3s ease;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary::after {
+    content: "+";
+
+    display: grid;
+    place-items: center;
+
+    flex-shrink: 0;
+
+    width: 34px;
+    height: 34px;
+
+    color: var(--rose-dark);
+    background: var(--background-soft);
+
+    border-radius: 50%;
+
+    font-size: 24px;
+    font-weight: 400;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+.faq-item[open] summary {
+    color: var(--rose-dark);
+}
+
+.faq-item[open] summary::after {
+    content: "−";
+
+    color: #ffffff;
+    background: var(--rose-dark);
+}
+
+.faq-item summary:hover {
+    color: var(--rose-dark);
+}
+
+
+/* Resposta */
+
+.faq-answer {
+    padding: 0 50px 26px 0;
+}
+
+.faq-answer p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+
+/* ==========================================
+   05 — FORMULÁRIO DE AGENDAMENTO
+========================================== */
+
+.contact .booking-intro {
+    margin-bottom: 35px;
+}
+
+.booking-form {
+    width: 100%;
+    max-width: 760px;
+
+    padding: 36px;
+
+    background: rgba(255, 255, 255, 0.88);
+
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 22px;
+
+    box-shadow:
+        0 24px 70px rgba(64, 48, 54, 0.08);
+
+    text-align: left;
+}
+
+
+/* Organização dos campos */
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 25px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+    gap: 9px;
+}
+
+.form-field label {
+    color: var(--dark);
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* Campos de entrada */
+
+.form-field input,
+.form-field select {
+    display: block;
+
+    width: 100%;
+    min-width: 0;
+    min-height: 52px;
+
+    padding: 13px 15px;
+
+    color: var(--dark);
+    background: #ffffff;
+
+    border: 1px solid #e6d8d9;
+    border-radius: 10px;
+
+    font-family: var(--font-body);
+    font-size: 14px;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.form-field input::placeholder {
+    color: #9a8f92;
+}
+
+.form-field input:focus,
+.form-field select:focus {
+    outline: none;
+
+    border-color: var(--rose-dark);
+
+    box-shadow:
+        0 0 0 3px rgba(200, 143, 149, 0.15);
+}
+
+
+/* Botão principal */
+
+.booking-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 14px;
+
+    width: 100%;
+    margin-top: 30px;
+
+    font-family: var(--font-body);
+    cursor: pointer;
+}
+
+.booking-submit span {
+    font-size: 20px;
+}
+
+
+/* Aviso do formulário */
+
+.form-disclaimer {
+    margin-top: 16px;
+
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.7;
+
+    text-align: center;
+}
+
+
+/* ==========================================
+   06 — RESULTADO DO AGENDAMENTO
+========================================== */
+
+.booking-result {
+    width: 100%;
+    max-width: 760px;
+
+    margin-top: 24px;
+    padding: 30px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--border);
+    border-radius: 18px;
+
+    box-shadow:
+        0 15px 40px rgba(64, 48, 54, 0.08);
+
+    text-align: left;
+}
+
+.booking-result[hidden] {
+    display: none;
+}
+
+.booking-result h3 {
+    margin-bottom: 12px;
+
+    color: var(--dark);
+
+    font-family: var(--font-title);
+    font-size: 29px;
+    font-weight: 500;
+}
+
+.booking-result p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+
+/* Mensagem gerada */
+
+.booking-result textarea {
+    display: block;
+
+    width: 100%;
+    min-height: 160px;
+
+    margin-top: 18px;
+    padding: 17px;
+
+    color: var(--dark);
+    background: var(--background);
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    font-family: var(--font-body);
+    font-size: 13px;
+    line-height: 1.8;
+
+    resize: vertical;
+}
+
+
+/* Botão copiar */
+
+.copy-booking {
+    min-height: 44px;
+
+    margin-top: 18px;
+    padding: 12px 22px;
+
+    color: #ffffff;
+    background: var(--rose-dark);
+
+    border: none;
+    border-radius: 30px;
+
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.copy-booking:hover {
+    background: var(--dark);
+}
+
+.copy-status {
+    min-height: 22px;
+    margin-top: 10px;
+}
+
+
+/* ==========================================
+   07 — RESPONSIVIDADE
+========================================== */
+
+@media (max-width: 1000px) {
+
+    .faq-layout {
+        gap: 40px;
+    }
+
+}
+
+@media (max-width: 800px) {
+
+    .faq-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .faq-heading {
+        max-width: 650px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .treatment-filters {
+        gap: 9px;
+    }
+
+    .filter-button {
+        min-height: 42px;
+        padding: 10px 16px;
+        font-size: 11px;
+    }
+
+    .faq-item summary {
+        font-size: 14px;
+        min-height: 72px;
+    }
+
+    .faq-answer {
+        padding-right: 20px;
+    }
+
+    .booking-form {
+        padding: 24px 19px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .booking-result {
+        padding: 22px 18px;
+    }
+
+}
+
+@media (max-width: 380px) {
+
+    .booking-submit {
+        padding-inline: 12px;
+        font-size: 10px;
+    }
+
+    .filter-button {
+        padding-inline: 12px;
+    }
+
+}
+
+
+/* ==========================================
+   08 — ACESSIBILIDADE
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .filter-button,
+    .faq-item summary,
+    .faq-item summary::after,
+    .copy-booking {
+        transition: none;
+    }
+
+}
+
+
+/* ==========================================
+   ETAPA 5 — MENU MOBILE
+========================================== */
+
+/* Botão invisível no computador */
+
+.menu-toggle {
+    display: none;
+
+    width: 46px;
+    height: 46px;
+
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    gap: 6px;
+
+    background: #fffaf8;
+    color: var(--rose-dark);
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    cursor: pointer;
+}
+
+
+/* Linhas do botão */
+
+.menu-toggle span {
+    display: block;
+
+    width: 23px;
+    height: 2px;
+
+    background: currentColor;
+    border-radius: 2px;
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+
+/* Transformação em X */
+
+.menu-toggle.is-active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.is-active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.is-active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+
+/* Menu compacto em tablets e celulares */
+
+@media (max-width: 1024px) {
+
+    .header-content {
+        display: grid;
+
+        grid-template-columns: minmax(0, 1fr) auto;
+
+        align-items: center;
+        justify-content: initial;
+
+        gap: 16px;
+        min-height: 76px;
+
+        padding-block: 15px;
+    }
+
+    /* Só mostra o botão se o JS funcionar */
+
+    .js-enabled .menu-toggle {
+        display: flex;
+    }
+
+    .navigation {
+        grid-column: 1 / -1;
+        order: 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+
+        width: 100%;
+        gap: 0;
+
+        max-height: 55vh;
+        overflow-y: auto;
+
+        padding-top: 12px;
+
+        border-top: 1px solid var(--border);
+    }
+
+    .navigation a {
+        display: flex;
+        align-items: center;
+
+        min-height: 46px;
+        padding: 11px 8px;
+
+        font-size: 13px;
+    }
+
+    .navigation a::after {
+        display: none;
+    }
+
+    /* Menu fechado com JS ativo */
+
+    .js-enabled .navigation:not(.is-open) {
+        display: none;
+    }
+
+    .js-enabled .navigation.is-open {
+        display: flex;
+    }
+
+    /* A opção Contato permanece no menu */
+
+    .header-button {
+        display: none;
+    }
+}
+
+
+/* Acessibilidade */
+
+.menu-toggle:focus-visible {
+    outline: 2px solid var(--rose-dark);
+    outline-offset: 4px;
+}
+
+
+/* ==========================================
+   ETAPA 5 — ACABAMENTO VISUAL
+========================================== */
+
+/* Rosé mais escuro para textos e botões */
+
+:root {
+    --rose-dark: #874b58;
+}
+
+
+/* Melhora o contraste do logotipo */
+
+.header .logo span {
+    color: var(--rose-dark);
+}
+
+
+/* Melhora o tamanho das áreas clicáveis */
+
+.treatment-select,
+.button-text {
+    min-height: 44px;
+}
+
+
+/* Melhora o foco pelo teclado */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+summary:focus-visible {
+    outline: 2px solid var(--rose-dark);
+    outline-offset: 4px;
+}
+
+
+/* Distância das seções ao cabeçalho */
+
+section[id] {
+    scroll-margin-top: 120px;
+}
+
+
+/* Imagens nunca ultrapassam o contêiner */
+
+img {
+    max-width: 100%;
+}
+
+
+/* Respeita os elementos ocultados pelos filtros */
+
+.treatment-card[hidden],
+.booking-result[hidden] {
+    display: none !important;
+}
+
+
+/* Formularios em telas estreitas */
+
+@media (max-width: 600px) {
+
+    .container {
+        width: min(100% - 32px, 1180px);
+    }
+
+    .form-field input,
+    .form-field select {
+        font-size: 16px;
+    }
+
+    .filter-button {
+        flex-grow: 1;
+    }
+
+    .booking-form {
+        padding: 24px 16px;
+    }
+
+    .booking-result {
+        padding: 24px 16px;
+    }
+
+    .booking-result textarea {
+        max-width: 100%;
+        min-height: 190px;
+        font-size: 14px;
+    }
+
+    .faq-item summary {
+        overflow-wrap: anywhere;
+    }
+
+}
+
+
+/* Movimentos reduzidos */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .hero-image,
+    .gallery-item img,
+    .treatment-image img,
+    .treatment-card {
+        transition: none !important;
+    }
+
+}
