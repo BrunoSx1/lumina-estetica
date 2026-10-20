@@ -57,7 +57,7 @@ a constante WHATSAPP_NUMBER no script.js.
 
 ## Demonstração online
 
-O link de demonstração será adicionado após a publicação.
+[Acessar Lumina Estética](COLE_AQUI_A_URL_REAL)
 
 ## Autor
 
